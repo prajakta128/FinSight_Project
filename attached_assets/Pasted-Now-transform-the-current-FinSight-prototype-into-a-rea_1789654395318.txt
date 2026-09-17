@@ -1,0 +1,145 @@
+Now transform the current FinSight prototype into a **real working web application flow**.
+
+IMPORTANT: **Do NOT rebuild the UI from scratch and do NOT remove the existing features/design.** Keep the current dashboard, pages, charts, components and styling, but replace the hardcoded demo experience with a proper user-driven data flow.
+
+### Required real user flow
+
+**1. First visit**
+New user should see:
+
+* Landing/Login page
+* Create Account
+* Login
+
+**2. New account**
+After registration:
+→ Create Business profile
+
+Fields:
+
+* Business name
+* Business type/industry
+* Location
+* Currency
+* Financial year
+* Opening cash balance
+* Monthly revenue target
+
+**3. Fresh dashboard**
+After creating a business, the dashboard should initially be EMPTY/zero-state.
+
+Do NOT immediately show Shree Packaging Solutions or predefined transactions.
+
+Show useful empty states such as:
+
+* "No transactions yet"
+* "Add your first expense"
+* "Add revenue"
+* "Add customer"
+* "Add vendor"
+
+**4. User enters real data**
+The user should be able to create:
+
+* Expenses
+* Revenue
+* Customers
+* Vendors
+* Receivables
+* Payables
+* Budgets
+* Recurring expenses
+* Invoices
+
+Forms should save the data.
+
+**5. Dashboard must calculate from user data**
+
+All dashboard values must come from the user's stored data:
+
+* Revenue
+* Expenses
+* Net Cash Flow
+* Current Cash
+* Receivables
+* Payables
+* Vendor spending
+* Expense categories
+* Budget performance
+* Financial Health Score
+* Expense anomalies
+* What Changed
+* Cash-flow forecast
+* Recommended actions
+
+For example:
+
+If the user adds:
+
+Revenue = ₹100,000
+Expenses = ₹40,000
+
+the dashboard should automatically show:
+
+Revenue = ₹100,000
+Expenses = ₹40,000
+Net Cash Flow = ₹60,000
+
+Do NOT hardcode these results.
+
+### Data architecture
+
+Use a proper persistent database/backend if the current project supports it.
+
+Each account/business must have its own data.
+
+Users must NOT see another user's transactions.
+
+Create proper relationships between:
+
+User → Business → Transactions → Customers → Vendors → Receivables → Payables → Budgets → Invoices.
+
+Keep calculations in reusable services/utilities rather than putting business logic directly inside UI components.
+
+### Demo data
+
+Remove automatic hardcoded business data from the normal user flow.
+
+However, keep an optional **"Load Demo Business"** button or seed function so I can quickly demonstrate the application during the competition.
+
+Demo mode should create the Shree Packaging Solutions data only when explicitly requested.
+
+### Intelligence
+
+Existing intelligence features should continue working, but they must use the current business's actual stored data.
+
+No fake numbers.
+
+If insufficient data exists, show:
+
+**"Not enough data yet — add more transactions to generate this insight."**
+
+### Important
+
+Preserve the existing professional FinSight UI and all major features.
+
+Do NOT spend time redesigning everything.
+
+First implement:
+
+**Authentication → Business Creation → Persistent Data → Expense/Revenue Entry → Dynamic Dashboard**
+
+Then connect the remaining existing features to the real data.
+
+After implementation:
+
+1. Run the application.
+2. Test registration/login.
+3. Create a new business.
+4. Confirm the dashboard starts empty.
+5. Add revenue and expenses.
+6. Confirm dashboard numbers update automatically.
+7. Confirm data remains after refresh.
+8. Fix all errors.
+
+Work on the existing project incrementally. Do not replace working features unnecessarily.

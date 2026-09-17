@@ -1,0 +1,501 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: business
+    description: Business profile and workspace data
+  - name: finance
+    description: Financial records and workspace actions
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /business:
+    get:
+      operationId: getBusiness
+      tags: [business]
+      summary: Get the current user's business
+      responses:
+        "200":
+          description: Business profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Business"
+        "404":
+          description: No business has been created
+    post:
+      operationId: createBusiness
+      tags: [business]
+      summary: Create the current user's business
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BusinessInput"
+      responses:
+        "201":
+          description: Business profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Business"
+  /business/bootstrap:
+    get:
+      operationId: getBusinessBootstrap
+      tags: [business]
+      summary: Get the current business and all financial records
+      responses:
+        "200":
+          description: Business workspace snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessBootstrap"
+        "404":
+          description: No business has been created
+  /business/demo:
+    post:
+      operationId: loadDemoBusiness
+      tags: [business]
+      summary: Load the Shree Packaging Solutions demo business
+      responses:
+        "201":
+          description: Seeded business workspace snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessBootstrap"
+  /transactions:
+    get:
+      operationId: listTransactions
+      tags: [finance]
+      summary: List transactions for the current business
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [expense, revenue]
+      responses:
+        "200":
+          description: Transactions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Transaction"
+    post:
+      operationId: createTransaction
+      tags: [finance]
+      summary: Create an expense transaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TransactionInput"
+      responses:
+        "201":
+          description: Created transaction
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+  /revenue:
+    post:
+      operationId: createRevenue
+      tags: [finance]
+      summary: Create a revenue entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RevenueInput"
+      responses:
+        "201":
+          description: Created revenue entry
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+  /customers:
+    post:
+      operationId: createCustomer
+      tags: [finance]
+      summary: Create a customer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CustomerInput"
+      responses:
+        "201":
+          description: Created customer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Customer"
+  /vendors:
+    post:
+      operationId: createVendor
+      tags: [finance]
+      summary: Create a vendor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VendorInput"
+      responses:
+        "201":
+          description: Created vendor
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Vendor"
+  /receivables:
+    post:
+      operationId: createReceivable
+      tags: [finance]
+      summary: Create a receivable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ReceivableInput"
+      responses:
+        "201":
+          description: Created receivable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Receivable"
+  /payables:
+    post:
+      operationId: createPayable
+      tags: [finance]
+      summary: Create a payable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PayableInput"
+      responses:
+        "201":
+          description: Created payable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Payable"
+  /budgets:
+    post:
+      operationId: createBudget
+      tags: [finance]
+      summary: Create a budget
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BudgetInput"
+      responses:
+        "201":
+          description: Created budget
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Budget"
+  /recurring-expenses:
+    post:
+      operationId: createRecurringExpense
+      tags: [finance]
+      summary: Create a recurring expense
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RecurringExpenseInput"
+      responses:
+        "201":
+          description: Created recurring expense
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecurringExpense"
+  /invoices:
+    post:
+      operationId: createInvoice
+      tags: [finance]
+      summary: Save an invoice intelligence record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InvoiceInput"
+      responses:
+        "201":
+          description: Created invoice
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Invoice"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    Business:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        industry: { type: string }
+        location: { type: string }
+        currency: { type: string }
+        financialYear: { type: string }
+        openingCash: { type: number }
+        monthlyRevenueTarget: { type: number }
+        createdAt: { type: string, format: date-time }
+      required: [id, name, industry, location, currency, financialYear, openingCash, monthlyRevenueTarget, createdAt]
+    BusinessInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        industry: { type: string, minLength: 1 }
+        location: { type: string, minLength: 1 }
+        currency: { type: string, minLength: 1 }
+        financialYear: { type: string, minLength: 1 }
+        openingCash: { type: number, minimum: 0 }
+        monthlyRevenueTarget: { type: number, minimum: 0 }
+      required: [name, industry, location, currency, financialYear, openingCash, monthlyRevenueTarget]
+    Transaction:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        type: { type: string, enum: [expense, revenue] }
+        description: { type: string }
+        amount: { type: number }
+        category: { type: string }
+        vendor: { type: ["string", "null"] }
+        customer: { type: ["string", "null"] }
+        date: { type: string, format: date }
+        status: { type: string }
+      required: [id, businessId, type, description, amount, category, date, status]
+    TransactionInput:
+      type: object
+      properties:
+        description: { type: string, minLength: 1 }
+        amount: { type: number, minimum: 0 }
+        category: { type: string, minLength: 1 }
+        vendor: { type: ["string", "null"] }
+        date: { type: string, format: date }
+        status: { type: string }
+      required: [description, amount, category, date, status]
+    RevenueInput:
+      type: object
+      properties:
+        description: { type: string, minLength: 1 }
+        amount: { type: number, minimum: 0 }
+        customer: { type: ["string", "null"] }
+        date: { type: string, format: date }
+        status: { type: string }
+      required: [description, amount, date, status]
+    Customer:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        name: { type: string }
+        email: { type: ["string", "null"] }
+        phone: { type: ["string", "null"] }
+      required: [id, businessId, name]
+    CustomerInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        email: { type: ["string", "null"] }
+        phone: { type: ["string", "null"] }
+      required: [name]
+    Vendor:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        name: { type: string }
+        category: { type: string }
+        terms: { type: string }
+      required: [id, businessId, name, category, terms]
+    VendorInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        category: { type: string, minLength: 1 }
+        terms: { type: string, minLength: 1 }
+      required: [name, category, terms]
+    Receivable:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        customer: { type: string }
+        invoice: { type: string }
+        amount: { type: number }
+        dueDate: { type: string, format: date }
+        status: { type: string }
+      required: [id, businessId, customer, invoice, amount, dueDate, status]
+    ReceivableInput:
+      type: object
+      properties:
+        customer: { type: string, minLength: 1 }
+        invoice: { type: string, minLength: 1 }
+        amount: { type: number, minimum: 0 }
+        dueDate: { type: string, format: date }
+        status: { type: string }
+      required: [customer, invoice, amount, dueDate, status]
+    Payable:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        vendor: { type: string }
+        reference: { type: string }
+        amount: { type: number }
+        dueDate: { type: string, format: date }
+        priority: { type: string }
+        status: { type: string }
+      required: [id, businessId, vendor, reference, amount, dueDate, priority, status]
+    PayableInput:
+      type: object
+      properties:
+        vendor: { type: string, minLength: 1 }
+        reference: { type: string, minLength: 1 }
+        amount: { type: number, minimum: 0 }
+        dueDate: { type: string, format: date }
+        priority: { type: string }
+        status: { type: string }
+      required: [vendor, reference, amount, dueDate, priority, status]
+    Budget:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        category: { type: string }
+        amount: { type: number }
+        period: { type: string }
+      required: [id, businessId, category, amount, period]
+    BudgetInput:
+      type: object
+      properties:
+        category: { type: string, minLength: 1 }
+        amount: { type: number, minimum: 0 }
+        period: { type: string, minLength: 1 }
+      required: [category, amount, period]
+    RecurringExpense:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        name: { type: string }
+        amount: { type: number }
+        category: { type: string }
+        frequency: { type: string }
+      required: [id, businessId, name, amount, category, frequency]
+    RecurringExpenseInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        amount: { type: number, minimum: 0 }
+        category: { type: string, minLength: 1 }
+        frequency: { type: string, minLength: 1 }
+      required: [name, amount, category, frequency]
+    Invoice:
+      type: object
+      properties:
+        id: { type: integer }
+        businessId: { type: integer }
+        vendor: { type: string }
+        invoiceNumber: { type: string }
+        invoiceDate: { type: string, format: date }
+        dueDate: { type: string, format: date }
+        subtotal: { type: number }
+        gst: { type: number }
+        total: { type: number }
+        category: { type: string }
+        status: { type: string }
+      required: [id, businessId, vendor, invoiceNumber, invoiceDate, dueDate, subtotal, gst, total, category, status]
+    InvoiceInput:
+      type: object
+      properties:
+        vendor: { type: string, minLength: 1 }
+        invoiceNumber: { type: string, minLength: 1 }
+        invoiceDate: { type: string, format: date }
+        dueDate: { type: string, format: date }
+        subtotal: { type: number, minimum: 0 }
+        gst: { type: number, minimum: 0 }
+        total: { type: number, minimum: 0 }
+        category: { type: string, minLength: 1 }
+        status: { type: string }
+      required: [vendor, invoiceNumber, invoiceDate, dueDate, subtotal, gst, total, category, status]
+    BusinessBootstrap:
+      type: object
+      properties:
+        business:
+          $ref: "#/components/schemas/Business"
+        transactions:
+          type: array
+          items: { $ref: "#/components/schemas/Transaction" }
+        customers:
+          type: array
+          items: { $ref: "#/components/schemas/Customer" }
+        vendors:
+          type: array
+          items: { $ref: "#/components/schemas/Vendor" }
+        receivables:
+          type: array
+          items: { $ref: "#/components/schemas/Receivable" }
+        payables:
+          type: array
+          items: { $ref: "#/components/schemas/Payable" }
+        budgets:
+          type: array
+          items: { $ref: "#/components/schemas/Budget" }
+        recurringExpenses:
+          type: array
+          items: { $ref: "#/components/schemas/RecurringExpense" }
+        invoices:
+          type: array
+          items: { $ref: "#/components/schemas/Invoice" }
+      required: [business, transactions, customers, vendors, receivables, payables, budgets, recurringExpenses, invoices]
+
