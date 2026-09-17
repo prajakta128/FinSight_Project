@@ -1,30 +1,68 @@
+<div align="center">
 
-````markdown
-# FinSight
+# 💠 FinSight
 
-## From Transactions to Smarter Business Decisions
+### From Transactions to Smarter Business Decisions
 
-**FinSight** is a financial intelligence platform designed for **Micro, Small and Medium Enterprises (MSMEs)**.
+**A financial intelligence platform built for Micro, Small and Medium Enterprises (MSMEs).**
 
-It combines expense and revenue tracking with financial analytics, risk detection, cash-flow forecasting, what-if simulation, invoice intelligence, and AI-assisted business insights.
+Expense & revenue tracking · Financial analytics · Risk detection · Cash-flow forecasting · What-if simulation · Invoice intelligence · AI Business Copilot
+
+[![Problem Statement](https://img.shields.io/badge/Problem%20Statement-FT--05-blueviolet)]()
+[![Stack](https://img.shields.io/badge/Stack-React%20%7C%20TypeScript%20%7C%20Node.js%20%7C%20PostgreSQL-informational)]()
+[![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)]()
+
+[Live Demo](https://youtu.be/_rRKMDO66Og) · [Project Presentation](https://docs.google.com/presentation/d/1rJxsQKeAxaM1GYZuOY3jT6OCizzWDOU3/edit?usp=sharing) · [Getting Started](#-getting-started)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Our Solution](#-our-solution)
+- [Key Features](#-key-features)
+- [Cash-Flow Forecast](#-cash-flow-forecast)
+- [What-If Financial Simulator](#-what-if-financial-simulator)
+- [AI Business Copilot](#-finsight-ai-business-copilot)
+- [Invoice Intelligence](#-invoice-intelligence)
+- [System Architecture](#️-system-architecture)
+- [Data Architecture](#️-data-architecture)
+- [Technology Stack](#️-technology-stack)
+- [Project Structure](#-project-structure)
+- [Data & Security](#-data--security)
+- [Example Business](#-example-business)
+- [End-to-End Workflow](#-end-to-end-workflow)
+- [What Makes FinSight Different](#-what-makes-finsight-different)
+- [Expected Impact](#-expected-impact)
+- [Future Scope](#-future-scope)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#️-environment-variables)
+- [Project Verification](#-project-verification)
+- [Competition](#-competition)
+- [Team](#-team)
 
 ---
 
 ## 🚀 Overview
 
-Many MSMEs manage their finances using spreadsheets, notebooks, invoices, and disconnected tools. This makes it difficult to understand the current financial position and take timely decisions.
+Many MSMEs still manage their finances across spreadsheets, notebooks, and paper invoices — disconnected tools that make it hard to see the current financial position, let alone act on it in time.
 
-FinSight provides a centralized platform where businesses can:
+**FinSight** replaces that fragmentation with a single, centralized platform where businesses can:
 
-- Track expenses and revenue
-- Manage receivables and payables
-- Monitor vendors and customers
-- Analyze financial trends
-- Detect unusual spending and financial risks
-- Forecast future cash flow
-- Simulate financial scenarios
-- Extract information from invoices
-- Ask financial questions using an AI Business Copilot
+| Capability | Description |
+|---|---|
+| 📒 Track | Expenses and revenue |
+| 🧾 Manage | Receivables and payables |
+| 🤝 Monitor | Vendors and customers |
+| 📈 Analyze | Financial trends |
+| 🚨 Detect | Unusual spending and financial risk |
+| 🔮 Forecast | Future cash flow |
+| 🧪 Simulate | Financial "what-if" scenarios |
+| 🔍 Extract | Structured data from invoices |
+| 🤖 Ask | Financial questions via an AI Business Copilot |
 
 ### Core Intelligence Flow
 
@@ -36,8 +74,8 @@ FinSight provides a centralized platform where businesses can:
        │
        ▼
 ┌──────────────────────┐
-│      FINsight        │
-│  Financial Engine    │
+│      FinSight         │
+│  Financial Engine     │
 └──────────┬───────────┘
            │
      ┌─────┼─────┬─────────┬──────────┐
@@ -49,127 +87,77 @@ FinSight provides a centralized platform where businesses can:
                        ▼
               ┌─────────────────┐
               │ SMART INSIGHTS  │
-              │ & ACTIONS       │
+              │  & ACTIONS      │
               └─────────────────┘
-````
+```
 
 ---
 
-# 🎯 Problem Statement
+## 🎯 Problem Statement
 
-### FT-05 — Digital Expense Tracking and Analytics Platform for MSMEs
+**FT-05 — Digital Expense Tracking and Analytics Platform for MSMEs**
 
-MSMEs often face challenges such as:
+MSMEs commonly face:
 
-* Manual financial record keeping
-* Scattered expense and revenue information
-* Limited visibility into receivables and payables
-* Difficulty identifying unusual expenses
-* Lack of cash-flow forecasting
-* Limited financial scenario planning
-* Delayed decision-making due to fragmented data
+- Manual, error-prone financial record keeping
+- Scattered expense and revenue information
+- Limited visibility into receivables and payables
+- Difficulty spotting unusual or risky expenses
+- No reliable cash-flow forecasting
+- Little to no scenario planning
+- Delayed decisions caused by fragmented data
 
-FinSight addresses these challenges by transforming financial records into actionable business intelligence.
+FinSight turns raw financial records into actionable business intelligence.
 
 ---
 
-# 💡 Our Solution
+## 💡 Our Solution
 
-FinSight follows a complete financial intelligence pipeline:
+FinSight runs on a complete financial intelligence pipeline:
 
 ```text
-TRACK
-  ↓
-ANALYZE
-  ↓
-DETECT
-  ↓
-FORECAST
-  ↓
-SIMULATE
-  ↓
-RECOMMEND
-  ↓
-ACT
+TRACK → ANALYZE → DETECT → FORECAST → SIMULATE → RECOMMEND → ACT
 ```
 
 Instead of only answering:
 
-> "Where did my money go?"
+> *"Where did my money go?"*
 
 FinSight helps answer:
 
-> "What is happening, what could happen next, and what should I consider doing?"
+> *"What is happening, what could happen next, and what should I consider doing?"*
 
 ---
 
-# ✨ Key Features
+## ✨ Key Features
 
-## 📊 Financial Dashboard
+### 📊 Financial Dashboard
 
-Provides a centralized overview of the business:
+A centralized view of business health:
 
-* Total Revenue
-* Total Expenses
-* Net Cash Flow
-* Current Cash
-* Receivables
-* Payables
-* Financial Health
-* Revenue vs Expenses
-* Expense Breakdown
-* Cash-Flow Trends
-* Top Vendors
+- Total Revenue · Total Expenses · Net Cash Flow · Current Cash
+- Receivables · Payables · Financial Health Score
+- Revenue vs. Expenses · Expense Breakdown
+- Cash-Flow Trends · Top Vendors
 
----
+### 💰 Expense & Revenue Management
 
-## 💰 Expense & Revenue Management
+Record and manage expenses, revenue, categories, vendors, customers, transaction dates, and amounts — all feeding directly into the analytics layer.
 
-Businesses can record and manage:
+### 📥 Receivables & Payables
 
-* Business expenses
-* Revenue
-* Categories
-* Vendors
-* Customers
-* Transaction dates
-* Amounts
+| Receivables | Payables |
+|---|---|
+| Customer | Vendor |
+| Invoice | Bill |
+| Amount | Amount |
+| Due date | Due date |
+| Payment status | Priority |
+| Overdue amount | Payment status |
 
-All financial information is stored and used by the analytics layer.
+### 🔍 Risk & Action Center
 
----
-
-## 📥 Receivables & Payables
-
-### Receivables
-
-Track:
-
-* Customer
-* Invoice
-* Amount
-* Due date
-* Payment status
-* Overdue amount
-
-### Payables
-
-Track:
-
-* Vendor
-* Bill
-* Amount
-* Due date
-* Priority
-* Payment status
-
----
-
-## 🔍 Risk & Action Center
-
-FinSight identifies financial situations that may require attention.
-
-Examples:
+FinSight surfaces financial situations that need attention — overdue receivables, upcoming payables, unusual expenses, significant spending changes, and potential cash-flow pressure — then recommends an action.
 
 ```text
 ┌─────────────────────────────┐
@@ -178,68 +166,39 @@ Examples:
                │
      ┌─────────┼─────────┐
      ▼         ▼         ▼
-Overdue     Unusual   Upcoming
-Payments    Spending  Payables
+ Overdue    Unusual   Upcoming
+ Payments   Spending  Payables
      │         │         │
      └─────────┼─────────┘
                ▼
         Recommended Action
 ```
 
-Examples include:
-
-* Overdue receivables
-* Upcoming payables
-* Unusual expenses
-* Significant spending changes
-* Potential cash-flow pressure
-
 ---
 
-# 📈 Cash-Flow Forecast
+## 📈 Cash-Flow Forecast
 
-FinSight uses available business financial data to estimate future cash-flow trends.
+FinSight projects future cash-flow trends from a business's own historical data — never fabricated figures.
 
 ```text
-Historical Data
-      │
-      ▼
-Revenue + Expenses
-      │
-      ▼
-Financial Analysis
-      │
-      ▼
-Forecast Engine
-      │
-      ├──────────────┐
-      ▼              ▼
-   30 Days        60/90 Days
-      │              │
-      └──────┬───────┘
-             ▼
-      Future Cash Flow
+Historical Data → Revenue + Expenses → Financial Analysis → Forecast Engine
+                                                                   │
+                                                    ┌──────────────┴──────────────┐
+                                                    ▼                             ▼
+                                                30 Days                     60 / 90 Days
+                                                    │                             │
+                                                    └──────────────┬──────────────┘
+                                                                   ▼
+                                                         Future Cash Flow
 ```
-
-The forecast is based on available business data rather than fabricated financial values.
 
 ---
 
-# 🎯 What-If Financial Simulator
+## 🎯 What-If Financial Simulator
 
-Businesses can explore possible financial scenarios before making decisions.
+Explore possible financial outcomes before committing to a decision.
 
-### Example scenarios
-
-* Revenue increases
-* Revenue decreases
-* Expenses increase
-* Expenses decrease
-* Customer payment delays
-* Receivables collection
-* Large planned purchase
-
-### Simulation Flow
+**Example scenarios:** revenue increase/decrease · expense increase/decrease · customer payment delays · receivables collection · a large planned purchase
 
 ```text
 Current Business Data
@@ -254,7 +213,6 @@ Current Business Data
 │ Payment Delay           │
 │ Large Purchase          │
 └────────────┬────────────┘
-             │
              ▼
       Scenario Engine
              │
@@ -269,127 +227,79 @@ Current Business Data
 
 ---
 
-# 🤖 FinSight AI Business Copilot
+## 🤖 FinSight AI Business Copilot
 
-The AI Business Copilot provides a natural-language interface for exploring business financial data.
+A natural-language interface for exploring your financial data — grounded strictly in the authenticated business's own records.
 
-Example questions:
+**Example questions:**
 
-```text
-"Why did my expenses increase?"
-
-"Which vendor has the highest spending?"
-
-"How much money is currently outstanding?"
-
-"Which receivables are overdue?"
-
-"Can the business afford a ₹2,00,000 purchase?"
-```
-
-### AI Data Flow
+- *"Why did my expenses increase?"*
+- *"Which vendor has the highest spending?"*
+- *"How much money is currently outstanding?"*
+- *"Which receivables are overdue?"*
+- *"Can the business afford a ₹2,00,000 purchase?"*
 
 ```text
-User Question
-      │
-      ▼
-Business Context
-      │
-      ▼
-Relevant Financial Data
-      │
-      ▼
-AI Business Copilot
-      │
-      ▼
-Data-Grounded Response
+User Question → Business Context → Relevant Financial Data → AI Business Copilot → Data-Grounded Response
 ```
 
-The Copilot should use the authenticated business's data and should not invent unavailable financial information.
+> The Copilot only uses the business's own data and never invents unavailable financial information.
 
 ---
 
-# 🧾 Invoice Intelligence
+## 🧾 Invoice Intelligence
 
-FinSight can process invoice documents and extract structured information.
+FinSight processes invoice documents and extracts structured fields automatically.
 
-### Supported information
-
-* Vendor
-* Invoice number
-* Invoice date
-* Due date
-* Subtotal
-* GST
-* Total amount
-* Category
-
-### Processing Flow
+**Extracted fields:** Vendor · Invoice number · Invoice date · Due date · Subtotal · GST · Total amount · Category
 
 ```text
-Invoice PDF / Image
-        │
-        ▼
-       OCR
-        │
-        ▼
-Text Extraction
-        │
-        ▼
-Financial Field Extraction
-        │
-        ▼
-Review
-        │
-        ▼
-Save to Business Records
+Invoice PDF / Image → OCR → Text Extraction → Financial Field Extraction → Review → Save to Business Records
 ```
 
 ---
 
-# 🏗️ System Architecture
+## 🏗️ System Architecture
 
 ```text
                          ┌──────────────────────┐
-                         │        USER          │
+                         │         USER          │
                          └──────────┬───────────┘
                                     │
                                     ▼
                          ┌──────────────────────┐
-                         │   React + TypeScript │
-                         │      Frontend        │
+                         │  React + TypeScript   │
+                         │       Frontend        │
                          └──────────┬───────────┘
                                     │
                                     ▼
                          ┌──────────────────────┐
-                         │      API SERVER      │
-                         │ Authentication       │
-                         │ Business Logic       │
-                         │ CRUD Operations      │
+                         │      API SERVER       │
+                         │  Authentication       │
+                         │  Business Logic       │
+                         │  CRUD Operations      │
                          └──────────┬───────────┘
                                     │
               ┌─────────────────────┼─────────────────────┐
-              │                     │                     │
-              ▼                     ▼                     ▼
-      ┌──────────────┐      ┌───────────────┐     ┌──────────────┐
-      │ Financial    │      │ Intelligence  │     │   Invoice    │
-      │ Analytics    │      │ Engine        │     │ Processing   │
-      └──────┬───────┘      └───────┬───────┘     └──────┬───────┘
-             │                      │                    │
-             └──────────────────────┼────────────────────┘
+              │                     │                      │
+              ▼                     ▼                      ▼
+      ┌──────────────┐      ┌───────────────┐      ┌──────────────┐
+      │  Financial    │      │ Intelligence  │      │   Invoice    │
+      │  Analytics    │      │    Engine     │      │  Processing  │
+      └──────┬───────┘      └───────┬───────┘      └──────┬───────┘
+             │                      │                      │
+             └──────────────────────┼──────────────────────┘
                                     │
                                     ▼
                          ┌──────────────────────┐
-                         │      PostgreSQL      │
-                         │       Database       │
+                         │      PostgreSQL       │
+                         │       Database        │
                          └──────────────────────┘
 ```
 
 ---
 
-# 🗂️ Data Architecture
-
-FinSight organizes financial information around each business.
+## 🗂️ Data Architecture
 
 ```text
                          ┌──────────────┐
@@ -402,7 +312,6 @@ FinSight organizes financial information around each business.
                          └──────┬───────┘
                                 │
        ┌────────────┬───────────┼───────────┬─────────────┐
-       │            │           │           │             │
        ▼            ▼           ▼           ▼             ▼
   Expenses      Revenue   Transactions Receivables    Payables
        │            │           │           │             │
@@ -415,49 +324,19 @@ FinSight organizes financial information around each business.
 
 ---
 
-# 🛠️ Technology Stack
+## 🛠️ Technology Stack
 
-## Frontend
-
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
-* Recharts
-* Lucide Icons
-
-## Backend
-
-* Node.js
-* API-based architecture
-* Drizzle ORM
-* PostgreSQL
-
-## Intelligence Layer
-
-* Financial analytics
-* Cash-flow forecasting
-* Anomaly detection
-* Scenario simulation
-* AI-assisted financial analysis
-
-## Document Processing
-
-* OCR
-* PDF processing
-* Image processing
-* Structured data extraction
-
-## Security
-
-* Authentication
-* Business-scoped data
-* User/business isolation
-* Database-backed persistence
+| Layer | Technologies |
+|---|---|
+| **Frontend** | React · TypeScript · Vite · Tailwind CSS · Recharts · Lucide Icons |
+| **Backend** | Node.js · API-based architecture · Drizzle ORM · PostgreSQL |
+| **Intelligence Layer** | Financial analytics · Cash-flow forecasting · Anomaly detection · Scenario simulation · AI-assisted analysis |
+| **Document Processing** | OCR · PDF processing · Image processing · Structured data extraction |
+| **Security** | Authentication · Business-scoped data · User/business isolation · Database-backed persistence |
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```text
 FinSight/
@@ -475,220 +354,144 @@ FinSight/
 │       └── ...
 │
 ├── api/
-│   └── ...
-│
 ├── lib/
-│   └── ...
-│
 ├── drizzle/
-│   └── ...
 │
 ├── openapi.yaml
 ├── package.json
 ├── pnpm-lock.yaml
-├── README.md
-└── ...
+└── README.md
 ```
 
-> The exact directory structure may change as the project evolves.
+> The exact directory structure may evolve as the project matures.
 
 ---
 
-# 🔐 Data & Security
+## 🔐 Data & Security
 
-FinSight is designed around authenticated, business-scoped financial data.
+FinSight is built around authenticated, business-scoped financial data, isolated per business:
 
 ```text
-User A
-   │
-   ▼
-Business A
-   │
-   ├── Transactions
-   ├── Expenses
-   ├── Revenue
-   └── Financial Analytics
-
-
-User B
-   │
-   ▼
-Business B
-   │
-   ├── Transactions
-   ├── Expenses
-   ├── Revenue
-   └── Financial Analytics
+User A                          User B
+   │                               │
+   ▼                               ▼
+Business A                     Business B
+   │                               │
+   ├── Transactions                ├── Transactions
+   ├── Expenses                    ├── Expenses
+   ├── Revenue                     ├── Revenue
+   └── Financial Analytics         └── Financial Analytics
 ```
 
-Financial records should remain isolated between businesses.
-
-Sensitive credentials such as API keys and database credentials must be stored as environment variables or secure deployment secrets.
+Sensitive credentials — API keys, database credentials — must always be stored as environment variables or secure deployment secrets, never committed to source control.
 
 ---
 
-# 📋 Example Business
+## 📋 Example Business
 
-FinSight can be demonstrated using:
+**Shree Packaging Solutions**
 
-### Shree Packaging Solutions
+| Field | Value |
+|---|---|
+| Industry | Packaging & Manufacturing |
+| Location | Pune, Maharashtra, India |
+| Currency | INR |
+| Financial Year | April – March |
 
-| Field          | Value                     |
-| -------------- | ------------------------- |
-| Industry       | Packaging & Manufacturing |
-| Location       | Pune, Maharashtra, India  |
-| Currency       | INR                       |
-| Financial Year | April – March             |
-
-The platform also supports starting with an empty business workspace and adding business data.
+The platform also supports starting from a completely empty business workspace.
 
 ---
 
-# 🔄 End-to-End Workflow
+## 🔄 End-to-End Workflow
 
 ```text
-┌──────────────┐
-│ Register /   │
-│ Login        │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│ Create       │
-│ Business     │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│ Add Financial│
-│ Data         │
-└──────┬───────┘
-       ▼
-┌─────────────────────────────┐
-│ Expenses / Revenue / Bills  │
-│ Receivables / Payables      │
-│ Vendors / Invoices          │
-└──────────────┬──────────────┘
-               ▼
-        ┌─────────────┐
-        │  ANALYTICS  │
-        └──────┬──────┘
-               ▼
-     ┌─────────┼─────────┐
-     ▼         ▼         ▼
-   Risks    Forecast   Insights
-     │         │         │
-     └─────────┼─────────┘
-               ▼
-       What-If Simulation
-               │
-               ▼
-       AI Business Copilot
-               │
-               ▼
-        Smarter Decisions
+Register / Login → Create Business → Add Financial Data
+                                            │
+                                            ▼
+                          Expenses / Revenue / Bills
+                          Receivables / Payables
+                          Vendors / Invoices
+                                            │
+                                            ▼
+                                       ANALYTICS
+                                            │
+                              ┌─────────────┼─────────────┐
+                              ▼             ▼             ▼
+                            Risks       Forecast       Insights
+                              │             │             │
+                              └─────────────┼─────────────┘
+                                            ▼
+                                  What-If Simulation
+                                            │
+                                            ▼
+                                  AI Business Copilot
+                                            │
+                                            ▼
+                                  Smarter Decisions
 ```
 
 ---
 
-# 🌟 What Makes FinSight Different?
+## 🌟 What Makes FinSight Different?
 
-Traditional expense tracking:
+| Traditional Tracking | FinSight |
+|---|---|
+| Transaction → Record → Report | Transaction → Analysis → Risk Detection → Forecast → Scenario Simulation → AI Explanation → Recommended Action |
 
-```text
-Transaction
-     ↓
-Record
-     ↓
-Report
-```
-
-FinSight:
-
-```text
-Transaction
-     ↓
-Analysis
-     ↓
-Risk Detection
-     ↓
-Forecast
-     ↓
-Scenario Simulation
-     ↓
-AI Explanation
-     ↓
-Recommended Action
-```
-
-FinSight combines **descriptive, predictive, and decision-support capabilities** into one MSME-focused platform.
+FinSight combines **descriptive, predictive, and decision-support** capabilities into a single MSME-focused platform.
 
 ---
 
-# 📊 Expected Impact
+## 📊 Expected Impact
 
-FinSight is designed to help MSMEs:
+FinSight helps MSMEs:
 
-* Reduce manual financial tracking
-* Improve financial visibility
-* Monitor cash position
-* Identify financial risks earlier
-* Understand spending patterns
-* Track customer and vendor obligations
-* Plan future cash requirements
-* Evaluate possible financial decisions
-* Make data-informed business decisions
-
----
-
-# 🔮 Future Scope
-
-Potential future extensions include:
-
-* Bank account integration
-* Automated transaction categorization
-* GST and accounting integrations
-* Advanced financial forecasting
-* Mobile application
-* Automated invoice reconciliation
-* Payment reminders
-* Financial report generation
-* Multi-business management
-* Advanced AI financial planning
+- Reduce manual financial tracking
+- Improve financial visibility and cash-position awareness
+- Identify financial risks earlier
+- Understand spending patterns
+- Track customer and vendor obligations
+- Plan future cash requirements
+- Evaluate financial decisions before committing to them
+- Make data-informed business decisions
 
 ---
 
-# 🚀 Getting Started
+## 🔮 Future Scope
 
-## Prerequisites
+- Bank account integration
+- Automated transaction categorization
+- GST and accounting software integrations
+- Advanced financial forecasting models
+- Mobile application
+- Automated invoice reconciliation
+- Payment reminders
+- Financial report generation
+- Multi-business management
+- Advanced AI financial planning
 
-Make sure the following are installed:
+---
 
-* Node.js
-* pnpm
-* PostgreSQL
+## 🚀 Getting Started
 
-## Installation
+### Prerequisites
 
-Clone the repository:
+- Node.js
+- pnpm
+- PostgreSQL
+
+### Installation
 
 ```bash
+# Clone the repository
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd FinSight
-```
 
-Install dependencies:
-
-```bash
+# Install dependencies
 pnpm install
 ```
 
-Configure environment variables:
-
-```env
-DATABASE_URL=your_database_url
-OPENAI_API_KEY=your_openai_api_key
-```
-
-Run the development server:
+Configure environment variables (see [below](#️-environment-variables)), then start the dev server:
 
 ```bash
 pnpm dev
@@ -696,20 +499,16 @@ pnpm dev
 
 ---
 
-# ⚠️ Environment Variables
+## ⚠️ Environment Variables
 
-Never commit secrets to GitHub.
-
-Add the required credentials through environment variables or deployment secrets.
-
-Example:
+Never commit secrets to GitHub. Provide credentials via environment variables or your deployment platform's secret manager.
 
 ```env
 DATABASE_URL=your_database_url
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-Add `.env` to `.gitignore`:
+Make sure your `.gitignore` includes:
 
 ```text
 .env
@@ -719,47 +518,44 @@ Add `.env` to `.gitignore`:
 
 ---
 
-# 🧪 Project Verification
+## 🧪 Project Verification
 
-The project should be verified for:
+The project should be verified across:
 
-* Authentication
-* Business creation
-* Database persistence
-* CRUD operations
-* Dashboard calculations
-* Business data isolation
-* Financial analytics
-* Forecasting
-* Scenario simulation
-* AI data grounding
-* Invoice processing
+- [ ] Authentication
+- [ ] Business creation
+- [ ] Database persistence
+- [ ] CRUD operations
+- [ ] Dashboard calculations
+- [ ] Business data isolation
+- [ ] Financial analytics
+- [ ] Forecasting
+- [ ] Scenario simulation
+- [ ] AI data grounding
+- [ ] Invoice processing
 
 ---
 
-# 🎥 Demo & Presentation
-
-# 🎥 Demo & Presentation
+## 🎥 Demo & Presentation
 
 - 🚀 **[Live Demo](https://youtu.be/_rRKMDO66Og)**
 - 📊 **[Project Presentation](https://docs.google.com/presentation/d/1rJxsQKeAxaM1GYZuOY3jT6OCizzWDOU3/edit?usp=sharing)**
----
-
-# 🏆 Competition
-
-**Problem Statement:** FT-05
-
-**Challenge:** Develop a Digital Expense Tracking and Analytics Platform for MSMEs.
-
-FinSight was developed to provide MSMEs with a centralized platform for financial tracking, analytics, risk detection, forecasting, scenario simulation, and AI-assisted decision support.
 
 ---
 
-# 👥 Team
+## 🏆 Competition
+
+| | |
+|---|---|
+| **Problem Statement** | FT-05 |
+| **Challenge** | Develop a Digital Expense Tracking and Analytics Platform for MSMEs |
+
+FinSight was built to give MSMEs a centralized platform for financial tracking, analytics, risk detection, forecasting, scenario simulation, and AI-assisted decision support.
+
+---
+
+## 👥 Team
 
 ### FinSight
 
 **From Transactions to Smarter Business Decisions.**
-
----
-
