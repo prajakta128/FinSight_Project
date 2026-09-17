@@ -739,12 +739,10 @@ The project should be verified for:
 
 # 🎥 Demo & Presentation
 
-**Live Demo:**
-`<[ADD_YOUR_DEPLOYED_APP_LINK](https://youtu.be/_rRKMDO66Og?si=Xe8sB_RZPeN8Vwn3)>`
+# 🎥 Demo & Presentation
 
-**PPT / Presentation:**
-`<[ADD_YOUR_PUBLIC_GOOGLE_SLIDES_OR_DRIVE_LINK](https://docs.google.com/presentation/d/1rJxsQKeAxaM1GYZuOY3jT6OCizzWDOU3/edit?slide=id.p2#slide=id.p2)>`
-
+- 🚀 **[Live Demo](https://youtu.be/_rRKMDO66Og)**
+- 📊 **[Project Presentation](https://docs.google.com/presentation/d/1rJxsQKeAxaM1GYZuOY3jT6OCizzWDOU3/edit?usp=sharing)**
 ---
 
 # 🏆 Competition
